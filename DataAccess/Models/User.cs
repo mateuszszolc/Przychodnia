@@ -38,7 +38,7 @@ namespace DataAccess.Models
 
         public ICollection<Diagnosis> Diagnoses { get; set; }
 
-        public ICollection<Reservation> Users { get; set; }
+        public ICollection<Reservation> Reservations { get; set; }
 
         public virtual Address Address { get; set; }
 
