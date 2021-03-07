@@ -10,7 +10,7 @@ namespace DataAccess.Repositories.Abstracts
     {
         Task<User> GetUserByIdAsync(int id);
         Task<List<User>> GetAllUsersAsync();
-        Task<User> GetUserByIdAsync(string email);
+        Task<User> GetUserByEmailAsync(string email);
         Task<bool> CheckUniqueUser(string email);
     }
 }

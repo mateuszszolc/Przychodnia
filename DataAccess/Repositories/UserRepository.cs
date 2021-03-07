@@ -16,27 +16,44 @@ namespace DataAccess.Repositories
         {
 
         }
-        
+
+        public async Task<bool> AddUserAsync(User user)
+        {
+           User result= await AddAsync(user);
+           if (result != null)
+               return true;
+           else
+               return false;
+        }
+
+        public async Task<bool> RemoveUserAsync(User user)
+        {
+            User result= await DeleteAsync(user);
+            if (result != null)
+                return true;
+            else
+                return false;
+        }
+
         public async Task<bool> CheckUniqueUser(string email)
         {
             return await GetAll().Where(x => x.Email == email).AnyAsync();
         }
 
-
-
-        public async Task<User> GetUserByIdAsync(string email)
+        public async Task<User> GetUserByEmailAsync(string email)
         {
             return await GetAll().FirstOrDefaultAsync(x => x.Email == email);
         }
 
-
+        public async Task<User> GetUserByUsernameAsync(string username)
+        {
+            return await GetAll().FirstOrDefaultAsync(x => x.Username == username);
+        }
 
         public async Task<User> GetUserByIdAsync(int id)
         {
             return await GetAll().FirstOrDefaultAsync(x => x.UserId == id);
         }
-
-
 
         public async Task<List<User>> GetAllUsersAsync()
         {
