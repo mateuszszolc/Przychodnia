@@ -29,7 +29,7 @@ namespace DataAccess.Models
         public string FlatNumber { get; set; }
 
         public virtual User User { get; set; }
-
+        [Required]
         public virtual Hospital Hospital { get; set; }
     }
 }

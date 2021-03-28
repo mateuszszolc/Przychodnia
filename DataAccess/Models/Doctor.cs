@@ -20,6 +20,8 @@ namespace DataAccess.Models
 
         public enum SpecializationType {Kardiolog, Chirurg, Stomatolog, Ortopeda, Pediatra}
 
+        [Required] public Hospital Hospital { get; set; }
+
         [Required]
         public SpecializationType Specialization { get; set; }
 

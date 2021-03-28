@@ -19,7 +19,7 @@ namespace DataAccess.Models.Context
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=.\ENOVA;Initial Catalog=DoctorGabinet;Trusted_Connection=True;MultipleActiveResultSets=True");
+            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=DoctorGabinet;Trusted_Connection=True;MultipleActiveResultSets=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -39,6 +39,6 @@ namespace DataAccess.Models.Context
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
-       // public DbSet<UserRoles> UserRoles { get; set; }
+        public DbSet<UserRoles> UserRoles { get; set; }
     }
 }

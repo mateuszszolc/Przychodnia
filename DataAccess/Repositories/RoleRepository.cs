@@ -20,22 +20,20 @@ namespace DataAccess.Repositories
            return await GetAll().Where(x => x.User.UserId == userId).ToListAsync();
        }
 
-       public async Task<bool> AddUserRoleAsync(UserRoles userRole)
+       public async Task<UserRoles> AddRoleAsync(UserRoles userRole)
        {
-            var result= await AddAsync(userRole);
-            if (result != null)
-                return true;
-            else
-                return false;
+           return await AddAsync(userRole);
+       
        }
 
-       public async Task<bool> RemoveUserRoleAsync(UserRoles userRole)
+       public async Task<UserRoles> UpdateUserRoleAsync(UserRoles userRole)
        {
-           var result= await DeleteAsync(userRole);
-           if (result != null)
-               return true;
-           else
-               return false;
+           return await UpdateAsync(userRole);
+       }
+
+       public async Task<UserRoles> RemoveUserRoleAsync(UserRoles userRole)
+       { 
+           return await DeleteAsync(userRole);
        }
 
    }

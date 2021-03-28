@@ -7,17 +7,14 @@ using DataAccess.Models;
 
 namespace DataAccess.Repositories.Abstracts
 {
-    interface IRoleRepository : IRepository<UserRoles>
+   public interface IRoleRepository : IRepository<UserRoles>
     {
-        public Task<UserRoles> AddAsync(UserRoles entity);
+        public Task<UserRoles> AddRoleAsync(UserRoles userRole);
 
-        public IQueryable<UserRoles> GetAll();
-
-        public Task<UserRoles> UpdateAsync(UserRoles entity);
+        public Task<UserRoles> UpdateUserRoleAsync(UserRoles entity);
 
         Task<List<UserRoles>> GetUserRolesByIdAsync(int userId);
-        Task<bool> AddUserRoleAsync(UserRoles userRole);
-        Task<bool> RemoveUserRoleAsync(UserRoles userRole);
+        Task<UserRoles> RemoveUserRoleAsync(UserRoles userRole);
 
     }
 }

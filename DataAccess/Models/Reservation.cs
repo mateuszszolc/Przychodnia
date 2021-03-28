@@ -19,8 +19,9 @@ namespace DataAccess.Models
 
         [Required] public bool Reservated { get; set; }
 
+        [Required] public virtual User User { get; set; }
 
-        public virtual Diagnosis Diagnosis { get; set; }
+        public ICollection<Diagnosis> Diagnoses { get; set; }
 
     }
 }
