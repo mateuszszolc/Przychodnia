@@ -1,0 +1,35 @@
+﻿@page "/authentication/{action}"
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+
+
+<div class="row">
+    <div class="col-12">
+        <h2>Login to your account</h2>
+        <EditForm>
+            <RadzenCard>
+
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <label>Email</label>
+                <RadzenTextBox></RadzenTextBox>
+
+                <label>Password</label>
+                <RadzenPassword/>
+
+                <hr />
+                <RadzenButton ButtonType="Radzen.ButtonType.Submit" Text="Login"
+                              ButtonStyle="Radzen.ButtonStyle.Primary" class="btn-block mr-2"
+                               />
+                <RadzenButton ButtonType="Radzen.ButtonType.Button" Text="Register"
+                              ButtonStyle="Radzen.ButtonStyle.Secondary" class="btn-block mr-2"
+                               />
+            </RadzenCard>
+        </EditForm>
+    </div>
+</div>
+
+@code{
+    [Parameter] public string Action { get; set; }
+}
